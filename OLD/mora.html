@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess the Mora</title>
+	<script type="text/javascript" src="canvas.js"></script>
+</head>
+<body onload="init()">
+	<div class="main" style="margin-left:auto; margin-right:auto;width:600px;">
+		<table class="instruct" width="100%" border=0>
+			<tr class="title" width="100%">
+				<td colspan="3" style="text-align:center;">Guess the Mora</td>
+			</tr>
+			<tr width="100%">
+				<td colspan="3" style="text-align:center;width:100%;">Draw the syllable on the left, then press the <span style="text-decoration:underline;">Check</span> button to show the correct mora on the right. If they're the same, you get a point.<br/>
+				<hr/></td>
+			</tr>
+			<tr class="pictures" height="300px">
+				<td id="drawing" style="width:49.5%;">
+				<canvas id="draw" style="position:absolute; width:280px; height:280px; margin-top:-140px; border:1px solid black;">
+				</canvas>
+				</td>
+				<td style="width:1%; background:black;"></td>
+				<td id="char" style="width:49.5%;"></td>
+			</tr>
+		</table>
+		<hr/>
+		<table class="buttons" width="100%" border=0>
+			<tr>
+				<td style="text-align:center;">Correct: <span id="CorrectNum"></span></td>
+				<td style="text-align:center"><button type="button" id="chk">Check</button>
+				<td style="text-align:center;">Total: <span id="totalNum"></span></td>
+			</tr>
+			<tr>
+				<td style="text-align:center;"><button type="button" id="skip">Skip</button></td>
+				<td style="text-align:center;"><button type="button" id="correct">Correct</button><button type="button" id="incorrect">Wrong</button></td>
+				<td style="text-align:center;"><button type="button" id="reset">Reset</button></td>
+			</tr>
+		</table>
+		<hr/>
+		<table class="options" width="100%" border=0>
+			<tr><td colspan='3'>Options:<br/></td></tr>
+			<tr>
+				<td id="kanaSelect" style="vertical-align:top;">
+					Kana: <br/>
+					<form id="kanaForm">
+					<input type="radio" name="kana" value="hira">Hiragana<br/>
+					<input type="radio" name="kana" value="kata">Katakana<br/>
+					<input type="radio" name="kana" value="both">Both
+					</form>
+				</td>
+				<td id="moraSelect" style="vertical-align:top;">
+					Mora: <br/>
+					<form id="moraForm">
+					<input type="checkbox" name="mora" value="a">A-row<br/>
+					<input type="checkbox" name="mora" value="k">K-row<br/>
+					<input type="checkbox" name="mora" value="s">S-row<br/>
+					<input type="checkbox" name="mora" value="t">T-row<br/>
+					<input type="checkbox" name="mora" value="n1">N-row<br/>
+					<input type="checkbox" name="mora" value="h">H-row<br/>
+					<input type="checkbox" name="mora" value="m">M-row<br/>
+					<input type="checkbox" name="mora" value="y">Y-row<br/>
+					<input type="checkbox" name="mora" value="r">R-row<br/>
+					<input type="checkbox" name="mora" value="w">W-row<br/>
+					<input type="checkbox" name="mora" value="n2">N&#39
+					</form>
+				</td>
+				<td id="modeSelect" style="vertical-align:top;">
+					Mode:
+					<form id="modeForm">
+					<input type="radio" name="mode" value="practice">Practice<br/>
+					<input type="radio" name="mode" value="test">Test
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

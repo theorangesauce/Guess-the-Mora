@@ -1,0 +1,36 @@
+#char{
+	margin-right:auto;
+	margin-left:auto;
+	width:280px;
+	height:280px;
+	border:1px solid black;
+	font-size:276px;
+	text-align:center;
+}
+.main{
+	margin-left:auto;
+	margin-right:auto;
+	width:600px;
+}
+.center{
+	text-align:center;
+}
+.vaTop{
+	vertical-align:top;
+}
+table{
+	width:100%;
+}
+#draw{
+	position:absolute;
+	margin-left:6px;
+	margin-top:-141px;
+	border:1px solid black;
+}
+.hide{
+	display:none;
+}
+
+#debug{
+	display:none;
+}

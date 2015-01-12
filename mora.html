@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess the Mora</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="canvas.js"></script>
+	<link rel="stylesheet" type="text/css" href="mora.css">
+	<script type="text/javascript">
+		function init(){
+			canvasStart()
+			moraStart()
+		}
+	</script>
+	<script type="text/javascript" src="mora.js"></script>
+</head>
+<body onload="init()">
+	<div class="main">
+		<table class="instruct">
+			<tr class="title">
+				<td colspan="3" class="center" style="font-weight:bold;font-size:20;">Guess the Mora</td>
+			</tr>
+			<tr width="100%">
+				<td colspan="3" class="center">Draw the syllable on the left, then press the <span style="text-decoration:underline;">Check</span> button to show the correct mora on the right. If they're the same, you get a point.<br/>
+				<hr/></td>
+			</tr>
+			<tr><td colspan="3" class="center">
+				Kana: <span id="currKana"></span><br/>
+				Mora: <span id="currMora"></span><br/>
+				<hr>
+			</td></tr>
+			<tr class="pictures" height="300px">
+				<td id="drawing" style="width:49.5%;">
+				<canvas id="draw" width="280px" height="280px">
+				</canvas>
+				</td>
+				<td style="width:1%; background:black;"></td>
+				<td id="correctAnswer" style="width:49.5%;">
+					<div id="char"><span id="charSpan" class="hide">サ</span></div>
+				</td>
+			</tr>
+		</table>
+		<hr/>
+		<table class="buttons">
+			<tr>
+				<td class="center">Correct: <span id="correctNum">0</span></td>
+				<td class="center"><button type="button" id="chk" onclick="checkMora()">Check</button>
+				<td class="center">Total: <span id="totalNum">0</span></td>
+			</tr>
+			<tr>
+				<td class="center"><button type="button" id="skip" onclick="skipMora()">Skip</button></td>
+				<td class="center"><button type="button" id="correct" onclick="validate('correct')">Correct</button><button type="button" id="incorrect" onclick="validate('wrong')">Wrong</button></td>
+				<td class="center"><button type="button" id="reset" onclick="resetMora()">Reset</button></td>
+			</tr>
+		</table>
+		<hr/>
+		<table class="options">
+			<tr><td colspan='3'>Options:<br/></td></tr>
+			<tr>
+				<td id="kanaSelect" class="vaTop" style="margin-left:auto;margin-right:auto;">
+					Kana: <br/>
+					<form id="kanaForm">
+					<input type="radio" id="hira" name="kana" value="hira" checked>Hiragana<br/>
+					<input type="radio" id="kata" name="kana" value="kata">Katakana<br/>
+					<input type="radio" id="bothKana" name="kana" value="both">Both
+					</form>
+				</td>
+				<td id="moraSelect" class="vaTop" style="margin-left:auto;margin-right:auto;">
+					Mora: <br/>
+					<form id="moraForm">
+					<input type="checkbox" id="achk" name="mora" value="a" checked>A-row<br/>
+					<input type="checkbox" id="kchk" name="mora" value="k" checked>K-row<br/>
+					<input type="checkbox" id="schk" name="mora" value="s" checked>S-row<br/>
+					<input type="checkbox" id="tchk" name="mora" value="t" checked>T-row<br/>
+					<input type="checkbox" id="n1chk" name="mora" value="n1" checked>N-row<br/>
+					<input type="checkbox" id="hchk" name="mora" value="h" checked>H-row<br/>
+					<input type="checkbox" id="mchk" name="mora" value="m" checked>M-row<br/>
+					<input type="checkbox" id="ychk" name="mora" value="y" checked>Y-row<br/>
+					<input type="checkbox" id="rchk" name="mora" value="r" checked>R-row<br/>
+					<input type="checkbox" id="wchk" name="mora" value="w" checked>W-row<br/>
+					<input type="checkbox" id="n2chk" name="mora" value="n2" checked>N&#39
+					</form>
+				</td>
+				<td id="modeSelect" class="vaTop" style="margin-left:auto;margin-right:auto;">
+					Mode:
+					<form id="modeForm">
+					<input type="radio" name="mode" value="practice" id="prac">Practice<br/>
+					<input type="radio" name="mode" value="test" id="test" checked>Test
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="debug">
+	<table>
+	<tr>
+	<td> Curr X: <span id="nX"></span></td>
+	<td> Prev X: <span id="pX"></span></td>
+	<td> Client X: <span id="cX"></span></td>
+	</tr><tr>
+	<td> Curr Y: <span id="nY"></span></td>
+	<td> Prev Y: <span id="pY"></span></td>
+	<td> Client Y: <span id="cY"></span></td>
+	</tr></table>
+	</div>
+</body>
+</html>
